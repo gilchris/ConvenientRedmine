@@ -1,0 +1,24 @@
+{
+    "extName": {
+        "message": "Convenient Redmine",
+        "description": "This extension name."
+    },
+    "extDescription": {
+        "message": "Add several convenient fuctions to redmine pages."
+    },
+    "extOptionTitle": {
+        "message": "Convenient Redmine Options",
+        "description": "This extension option page title."
+    },
+    "optionWorkingDomain": {
+        "message": "Working Domain",
+        "description": "option name for working domain."
+    },
+    "optionWorkingDomain_placeholder": {
+        "message": "write with regular expression",
+        "description": "working domain option placeholder message."
+    },
+    "buttonSave": {
+        "message": "Save"
+    }
+}

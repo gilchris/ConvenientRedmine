@@ -1,0 +1,8 @@
+{
+    "extName": { "message": "편리한 레드마인" },
+    "extDescription": { "message": "레드마인 사이트에 몇가지 기능을 추가"},
+    "extOptionTitle": { "message": "편리한 레드마인 옵션" },
+    "optionWorkingDomain": { "message": "적용한 도메인" },
+    "optionWorkingDomain_placeholder": { "message": "정규표현식으로 넣어주세요." },
+    "buttonSave": { "message": "저장" }
+}
