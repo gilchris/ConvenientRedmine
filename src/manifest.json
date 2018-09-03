@@ -6,8 +6,6 @@
     "author": "gilchris",
     "default_locale": "en",
     "permissions": [
-        "activeTab",
-        "webNavigation",
         "storage"
     ],
     "background": {
