@@ -5,6 +5,7 @@
     "manifest_version": 2,
     "author": "gilchris",
     "default_locale": "en",
+    "options_page": "options.html",
     "permissions": [
         "storage"
     ],

@@ -2,12 +2,58 @@
 <html>
 <head>
     <title></title>
+    <style>
+        body {
+            font-size: 14px;
+        }
+        .wrapper {
+            margin-left: 50px;
+        }
+        .wrapper span {
+            padding: 0 20px;
+            vertical-align: middle;
+            line-height: 25px;
+        }
+        .wrapper input {
+            vertical-align: middle;
+            line-height: 25px;
+        }
+        .wrapperColors {
+            display: grid;
+            width: 450px;
+            grid-template-columns: 1fr 60px 2fr;
+            grid-row-gap: 10px;
+        }
+        button {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <label><span id="lblWorkingDomain"></span><input type="text" placeholder="" id="optWorkingDomain" /></label>
-    <p>
-        <button id="btnSave"></button>
-    </p>
+    <h1></h1>
+    <div class="wrapper">
+            <label><span id="lblWorkingDomain"></span><input type="text" placeholder="" id="optWorkingDomain" /></label>
+            <h3 id="lblListColors"></h3>
+            <div class="wrapperColors">
+                <span class="listHeader"></span>
+                <span class="listHeader"></span>
+                <span class="listHeader" id="lblStateColorMaybeDescription"></span>
+                <span id="lblListColor1"></span><input type="color" id="listColor1" /><span id="descriptionListColor1"></span>
+                <span id="lblListColor2"></span><input type="color" id="listColor2" /><span id="descriptionListColor2"></span>
+                <span id="lblListColor3"></span><input type="color" id="listColor3" /><span id="descriptionListColor3"></span>
+                <span id="lblListColor4"></span><input type="color" id="listColor4" /><span id="descriptionListColor4"></span>
+                <span id="lblListColor5"></span><input type="color" id="listColor5" /><span id="descriptionListColor5"></span>
+                <span id="lblListColor6"></span><input type="color" id="listColor6" /><span id="descriptionListColor6"></span>
+                <span id="lblListColor7"></span><input type="color" id="listColor7" /><span id="descriptionListColor7"></span>
+                <span id="lblListColor8"></span><input type="color" id="listColor8" /><span id="descriptionListColor8"></span>
+                <span id="lblListColor9"></span><input type="color" id="listColor9" /><span id="descriptionListColor9"></span>
+                <span id="lblListColor10"></span><input type="color" id="listColor10" /><span id="descriptionListColor10"></span>
+            </div>
+            <p>
+                <button id="btnSave"></button>
+            </p>
+    </div>
+    <script src="lib/jquery-3.3.1.min.js"></script>
     <script src="option.js"></script>
 </body>
 </html>

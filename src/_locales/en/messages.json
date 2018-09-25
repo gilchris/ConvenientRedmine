@@ -20,5 +20,26 @@
     },
     "buttonSave": {
         "message": "Save"
-    }
+    },
+    "stateColor1": { "message": "color for state 1" },
+    "stateColor2": { "message": "color for state 2" },
+    "stateColor3": { "message": "color for state 3" },
+    "stateColor4": { "message": "color for state 4" },
+    "stateColor5": { "message": "color for state 5" },
+    "stateColor6": { "message": "color for state 6" },
+    "stateColor7": { "message": "color for state 7" },
+    "stateColor8": { "message": "color for state 8" },
+    "stateColor9": { "message": "color for state 9" },
+    "stateColor10": { "message": "color for state 10" },
+    "stateColorMaybeDescription": { "message": "Maybe this state used for"},
+    "stateColorMaybe1": { "message": "New" },
+    "stateColorMaybe2": { "message": "Processing" },
+    "stateColorMaybe3": { "message": "Solved" },
+    "stateColorMaybe4": { "message": "Discuss" },
+    "stateColorMaybe5": { "message": "Completed" },
+    "stateColorMaybe6": { "message": "Reject" },
+    "stateColorMaybe7": { "message": "" },
+    "stateColorMaybe8": { "message": "Reopen" },
+    "stateColorMaybe9": { "message": "Postpond" },
+    "stateColorMaybe10": { "message": "Need Feedback" }
 }
