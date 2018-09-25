@@ -1,7 +1,7 @@
 {
     "name": "__MSG_extName__",
     "description": "__MSG_extDescription__",
-    "version": "0.8",
+    "version": "1.0",
     "manifest_version": 2,
     "author": "gilchris",
     "default_locale": "en",
