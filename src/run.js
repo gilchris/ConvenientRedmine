@@ -1,19 +1,22 @@
 chrome.storage.sync.get({
-    "workingDomain": ".*redmine.*"
+    "workingDomain": ".*redmine.*",
+    "listColors": {
+        "1": "#aaeeaa", // 신규
+        "2": "#bbffbb", // 진행
+        "3": "#cccccc", // 해결
+        "4": "#ffff99", // 의견
+        "5": "#aaaaaa", // 완료
+        "6": "#bbbbbb", // 거절 (Reject)
+        "7": "#ffffff", // ??
+        "8": "#bbffbb", // 다시 열림 (Reopened)
+        "9": "#eeffaa", // 보류
+        "10": "#ffff99" // 의견 (Need feedback)
+    }
 }, function (options) {
     if (location.href.match(new RegExp(options.workingDomain, "i"))) {
-        var colors = {
-            "1": "#aea", // 신규
-            "2": "#bfb", // 진행
-            "3": "#ccc", // 해결
-            "4": "#ff9", // 의견
-            "5": "#aaa", // 완료
-            "9": "#efa", // 보류
-            "10": "#ff9" // 의견
-            };
-        for (var status in colors) {
-            $("tr.status-" + status).css("background", colors[status]);
-            $("a.status-" + status + ":not(.parent)").parent().parent("tr").css("background", colors[status]);
+        for (var status in options.listColors) {
+            $("tr.status-" + status).css("background", options.listColors[status]);
+            $("a.status-" + status + ":not(.parent)").parent().parent("tr").css("background", options.listColors[status]);
         }
     
         if (location.href.indexOf('/issues/') > -1) {
