@@ -36,32 +36,36 @@ chrome.storage.sync.get({
             }
         });
 
-        $("div.attachments a, div.thumbnails a").each(function () {
+        var imgBox = $('<div id="CR_ImageBox">').css('display', 'none'),
+            attachmentsEls = $("div.attachments a, div.thumbnails a"),
+            imgUrlMap = [];
+        attachmentsEls.filter('[href*="download"]').each(function () {
             var el = $(this),
                 url = el.attr('href');
             if (url.match(/jpeg|jpg|bmp|gif|png/i)) {
-                el.attr('href', '#'+el.attr('title'));
+                imgUrlMap.push(url);
+                var imgSrc = $('<img>').attr('src', url);
+                imgBox.append(imgSrc);
+            }
+        });
+        $('body').append(imgBox);
+        var gallery = new Viewer(document.getElementById('CR_ImageBox'));
+        attachmentsEls.each(function () {
+            var el = $(this),
+                url = el.attr('href'),
+                splitedUrl = url.split('/'),
+                findName = splitedUrl[splitedUrl.length - 2] + '/' + splitedUrl[splitedUrl.length - 1];
+            if (url.match(/jpeg|jpg|bmp|gif|png/i) && url.indexOf('download') === -1) {
+                el.attr('href', '#');
                 el.click(function () {
-                    $('<div id="customImageLayerBG">').css({
-                        'position': 'absolute',
-                        'top': 0,
-                        'left': 0,
-                        'width': '100%',
-                        'height': '100%',
-                        'background-color': '#DDDDDD',
-                        'opacity': 0.8,
-                        'z-index': 50
-                    }).appendTo('body');
-                    $('<img id="customImageLayer" src="'+url+'">').css({
-                        'position': 'absolute',
-                        'top': '50px',
-                        'left': '50px',
-                        'cursor': 'pointer',
-                        'z-index': 51
-                    }).click(function () {
-                        $('#customImageLayer').remove();
-                        $('#customImageLayerBG').remove();
-                    }).appendTo('body');
+                    for (var i = 0, l = imgUrlMap.length; i < l; i++) {
+                        if (imgUrlMap[i].indexOf(findName) > -1) {
+                            break;
+                        }
+                    }
+                    gallery.view(i);
+                    gallery.show();
+                    return false;
                 });
             }
         });
