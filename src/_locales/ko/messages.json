@@ -5,6 +5,7 @@
     "optionWorkingDomain": { "message": "적용한 도메인" },
     "optionWorkingDomain_placeholder": { "message": "정규표현식으로 넣어주세요." },
     "buttonSave": { "message": "저장" },
+    "buttonLoadDefault": { "message": "기본설정 읽어오기" },
     "stateColor1": { "message": "1번 상태 색상" },
     "stateColor2": { "message": "2번 상태 색상" },
     "stateColor3": { "message": "3번 상태 색상" },

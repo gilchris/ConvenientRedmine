@@ -21,6 +21,9 @@
     "buttonSave": {
         "message": "Save"
     },
+    "buttonLoadDefault": {
+        "message": "Load Default"
+    },
     "stateColor1": { "message": "color for state 1" },
     "stateColor2": { "message": "color for state 2" },
     "stateColor3": { "message": "color for state 3" },

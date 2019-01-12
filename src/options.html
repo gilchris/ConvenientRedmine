@@ -24,8 +24,18 @@
             grid-template-columns: 1fr 60px 2fr;
             grid-row-gap: 10px;
         }
+        .button_bar {
+            margin-top: 20px;
+        }
         button {
             font-size: 16px;
+        }
+        #btnSave {
+            font-size: 26px;
+            font-weight: bold;
+        }
+        #btnLoadDefault {
+            margin-left: 100px;
         }
     </style>
 </head>
@@ -49,8 +59,9 @@
                 <span id="lblListColor9"></span><input type="color" id="listColor9" /><span id="descriptionListColor9"></span>
                 <span id="lblListColor10"></span><input type="color" id="listColor10" /><span id="descriptionListColor10"></span>
             </div>
-            <p>
+            <p class="button_bar">
                 <button id="btnSave"></button>
+                <button id="btnLoadDefault"></button>
             </p>
     </div>
     <script src="lib/jquery-3.3.1.min.js"></script>

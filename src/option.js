@@ -1,8 +1,8 @@
 $(function () {
     var msg = chrome.i18n.getMessage,
-        initOptions = {},
         elWorkingDomain = $("#optWorkingDomain"),
         elSaveButton = $("#btnSave"),
+        elLoadDefaultButton = $("#btnLoadDefault"),
         elListColor1 = $("#listColor1"),
         elListColor2 = $("#listColor2"),
         elListColor3 = $("#listColor3"),
@@ -18,6 +18,7 @@ $(function () {
     $("#lblWorkingDomain").text(msg("optionWorkingDomain"));
     elWorkingDomain.attr("placeholder", msg("optionWorkingDomain_placeholder"));
     elSaveButton.text(msg("buttonSave"));
+    elLoadDefaultButton.text(msg("buttonLoadDefault"));
 
     $("#lblStateColorMaybeDescription").text(msg("stateColorMaybeDescription"));
     $("#lblListColor1").text(msg("stateColor1"));
@@ -41,23 +42,22 @@ $(function () {
     $("#descriptionListColor9").text(msg("stateColorMaybe9"));
     $("#descriptionListColor10").text(msg("stateColorMaybe10"));
 
-    var bgWin = chrome.extension.getBackgroundPage();
-    bgWin.loadOptions(function (_options) {
-        initOptions = _options;
+    var bgWin = chrome.extension.getBackgroundPage(),
+        displayOptions = function (options) {
+            elWorkingDomain.attr("value", options["workingDomain"]);
 
-        elWorkingDomain.attr("value", initOptions["workingDomain"]);
-
-        elListColor1.val(initOptions["listColors"]["1"]);
-        elListColor2.val(initOptions["listColors"]["2"]);
-        elListColor3.val(initOptions["listColors"]["3"]);
-        elListColor4.val(initOptions["listColors"]["4"]);
-        elListColor5.val(initOptions["listColors"]["5"]);
-        elListColor6.val(initOptions["listColors"]["6"]);
-        elListColor7.val(initOptions["listColors"]["7"]);
-        elListColor8.val(initOptions["listColors"]["8"]);
-        elListColor9.val(initOptions["listColors"]["9"]);
-        elListColor10.val(initOptions["listColors"]["10"]);
-    });
+            elListColor1.val(options["listColors"]["1"]);
+            elListColor2.val(options["listColors"]["2"]);
+            elListColor3.val(options["listColors"]["3"]);
+            elListColor4.val(options["listColors"]["4"]);
+            elListColor5.val(options["listColors"]["5"]);
+            elListColor6.val(options["listColors"]["6"]);
+            elListColor7.val(options["listColors"]["7"]);
+            elListColor8.val(options["listColors"]["8"]);
+            elListColor9.val(options["listColors"]["9"]);
+            elListColor10.val(options["listColors"]["10"]);
+        };
+    bgWin.loadOptions(displayOptions);
 
     elSaveButton.click(function () {
         bgWin.saveOptions({
@@ -76,5 +76,7 @@ $(function () {
             }
         });
     });
-
+    elLoadDefaultButton.click(function () {
+        displayOptions(bgWin.defaultOptions);
+    });
 });
