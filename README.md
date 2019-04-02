@@ -2,6 +2,8 @@
 
 chrome extension for adding advantages of redmine
 
+[In Chrome Web Store](https://chrome.google.com/webstore/detail/convenient-redmine/cebgldbppceblpomepllpcmmebbmfcko)
+
 ## Features
 
 ### Issue list coloring
