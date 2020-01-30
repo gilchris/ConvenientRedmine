@@ -1,5 +1,6 @@
 $(function () {
-    var msg = chrome.i18n.getMessage,
+    var options = {},
+        msg = chrome.i18n.getMessage,
         elWorkingDomain = $("#optWorkingDomain"),
         elSaveButton = $("#btnSave"),
         elLoadDefaultButton = $("#btnLoadDefault"),
@@ -42,25 +43,26 @@ $(function () {
     $("#descriptionListColor9").text(msg("stateColorMaybe9"));
     $("#descriptionListColor10").text(msg("stateColorMaybe10"));
 
-    var bgWin = chrome.extension.getBackgroundPage(),
-        displayOptions = function (options) {
-            elWorkingDomain.attr("value", options["workingDomain"]);
+    var displayOptions = function (options) {
+        elWorkingDomain.attr("value", options["workingDomain"]);
 
-            elListColor1.val(options["listColors"]["1"]);
-            elListColor2.val(options["listColors"]["2"]);
-            elListColor3.val(options["listColors"]["3"]);
-            elListColor4.val(options["listColors"]["4"]);
-            elListColor5.val(options["listColors"]["5"]);
-            elListColor6.val(options["listColors"]["6"]);
-            elListColor7.val(options["listColors"]["7"]);
-            elListColor8.val(options["listColors"]["8"]);
-            elListColor9.val(options["listColors"]["9"]);
-            elListColor10.val(options["listColors"]["10"]);
-        };
-    bgWin.loadOptions(displayOptions);
+        elListColor1.val(options["listColors"]["1"]);
+        elListColor2.val(options["listColors"]["2"]);
+        elListColor3.val(options["listColors"]["3"]);
+        elListColor4.val(options["listColors"]["4"]);
+        elListColor5.val(options["listColors"]["5"]);
+        elListColor6.val(options["listColors"]["6"]);
+        elListColor7.val(options["listColors"]["7"]);
+        elListColor8.val(options["listColors"]["8"]);
+        elListColor9.val(options["listColors"]["9"]);
+        elListColor10.val(options["listColors"]["10"]);
+    };
+    chrome.storage.sync.get(optionKeys, function (options) {
+        displayOptions(options);
+    });
 
     elSaveButton.click(function () {
-        bgWin.saveOptions({
+        chrome.storage.sync.set({
             "workingDomain": elWorkingDomain.val(),
             "listColors": {
                 "1": elListColor1.val(),
@@ -77,6 +79,6 @@ $(function () {
         });
     });
     elLoadDefaultButton.click(function () {
-        displayOptions(bgWin.defaultOptions);
+        displayOptions(defaultOptions);
     });
 });
