@@ -1,15 +1,19 @@
 {
     "name": "__MSG_extName__",
     "description": "__MSG_extDescription__",
-    "version": "1.1.2",
+    "version": "1.1.4",
     "manifest_version": 2,
     "author": "gilchris",
     "default_locale": "en",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
     "options_page": "options.html",
     "permissions": [
         "storage",
         "webNavigation",
-        "tabs",
         "https://*/*",
         "http://*/*"
     ],
