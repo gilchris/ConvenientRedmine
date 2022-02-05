@@ -1,3 +1,5 @@
+import {defaultOptions} from './default_option.js';
+
 $(function () {
     var options = {},
         msg = chrome.i18n.getMessage,
@@ -57,7 +59,7 @@ $(function () {
         elListColor9.val(options["listColors"]["9"]);
         elListColor10.val(options["listColors"]["10"]);
     };
-    chrome.storage.sync.get(optionKeys, function (options) {
+    chrome.storage.sync.get(["workingDomain", "listColors"], function (options) {
         displayOptions(options);
     });
 

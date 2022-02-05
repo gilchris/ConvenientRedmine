@@ -1,5 +1,6 @@
-var optionKeys = ["workingDomain", "listColors"],
-    defaultOptions = {
+'use strict';
+
+export const defaultOptions = {
         "workingDomain": ".*redmine.*",
         "listColors": {
             "1": "#aaeeaa", // 신규

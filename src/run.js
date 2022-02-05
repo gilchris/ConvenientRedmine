@@ -1,4 +1,4 @@
-chrome.storage.sync.get(optionKeys, function (options) {
+chrome.storage.sync.get(["workingDomain", "listColors"], function (options) {
     if (location.href.match(new RegExp(options.workingDomain, "i"))) {
         for (var status in options.listColors) {
             $("tr.status-" + status).css("background", options.listColors[status]);
